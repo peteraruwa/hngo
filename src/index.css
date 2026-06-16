@@ -1,10 +1,4 @@
-/* ============================================================
-   Global stylesheet — same visual language as the source site,
-   with extra motion layered in (fire-divider flicker, gradient
-   shimmer, ambient glow pulses, slow globe spin, icon float).
-   ============================================================ */
-export const CSS = `
-  :root{
+:root{
     --ink:#0a0502; --ink-2:#130a05; --ink-3:#1b0f07;
     --ember:#ff6a18; --flame:#ff9a3c; --gold:#f5b53f; --gold-soft:#ffd98a;
     --crimson:#c81e3a; --ash:#c4b3a4; --ash-dim:#8c7c6e;
@@ -324,4 +318,3 @@ export const CSS = `
   .amount-chips{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.4rem}
   .amount-chip{padding:.45em 1em;border-radius:20px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.05);color:var(--cream);font-size:.9rem;cursor:pointer;transition:background .2s,border-color .2s}
   .amount-chip.active,.amount-chip:hover{background:var(--ember);border-color:var(--ember);color:#fff}
-`;

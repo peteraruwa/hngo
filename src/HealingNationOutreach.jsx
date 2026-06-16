@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { CSS } from "./styles";
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -54,7 +53,6 @@ export default function HealingNationOutreach() {
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary_large_image" />
 
-      <style>{CSS}</style>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link
