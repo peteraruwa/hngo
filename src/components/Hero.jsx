@@ -6,7 +6,7 @@ function Hero() {
     <section className="hero" id="home">
       <div className="hero-glow" />
       <EmberCanvas />
-      <svg className="hero-globe" viewBox="0 0 400 400" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true">
+      <svg className="hero-globe" viewBox="0 0 400 400" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
         <circle cx="200" cy="200" r="160" />
         <ellipse cx="200" cy="200" rx="160" ry="62" />
         <ellipse cx="200" cy="200" rx="160" ry="120" />
