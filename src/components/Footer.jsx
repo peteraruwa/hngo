@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { LOGO_SRC } from "../assets";
 import Ico from "../icons";
 function Footer() {

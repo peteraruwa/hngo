@@ -1,5 +1,6 @@
 import EmberCanvas from "./EmberCanvas";
 import Ico from "../icons";
+import Reveal from "./Reveal";
 function Hero() {
   return (
     <section className="hero" id="home">

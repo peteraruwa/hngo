@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CSS } from "./styles";
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
@@ -8,11 +8,14 @@ import Founder from "./components/Founder";
 import Ministries from "./components/Ministries";
 import Medical from "./components/Medical";
 import Media from "./components/Media";
+import Gallery from "./components/Gallery";
 import Events from "./components/Events";
 import Testimonies from "./components/Testimonies";
 import Give from "./components/Give";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import FireDivider from "./components/FireDivider";
+
 export default function HealingNationOutreach() {
   const [menuOpen, setMenuOpen] = useState(false);
   const rootRef = useRef(null);
@@ -43,6 +46,14 @@ export default function HealingNationOutreach() {
 
   return (
     <div className="hn-root" ref={rootRef}>
+      {/* SEO metadata */}
+      <title>Healing Nation Global Outreach — Taking the Fire of God to the Nations</title>
+      <meta name="description" content="A Christ-centered ministry carrying an apostolic mandate for evangelism, revival, healing, discipleship, and medical outreach — winning souls and restoring lives across the earth." />
+      <meta property="og:title" content="Healing Nation Global Outreach" />
+      <meta property="og:description" content="Taking the fire of God to the nations through evangelism, healing, and medical outreach." />
+      <meta property="og:type" content="website" />
+      <meta name="twitter:card" content="summary_large_image" />
+
       <style>{CSS}</style>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -67,6 +78,8 @@ export default function HealingNationOutreach() {
       <FireDivider />
 
       <Media />
+      <Gallery />
+
       <Events />
       <Testimonies />
       <Give />

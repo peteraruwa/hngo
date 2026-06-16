@@ -1,23 +1,41 @@
-import { useState } from "react";
-function PrayerForm() {
-  const [noteShown, setNoteShown] = useState(false);
-  const timerRef = useRef(null);
+import { useRef, useState } from "react";
+import Reveal from "./Reveal";
 
-  function handleSubmit(e) {
+/* Replace YOUR_FORM_ID with the ID from your Formspree dashboard at formspree.io */
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+
+function PrayerForm() {
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+  const timerRef = useRef(null);
+  const formRef = useRef(null);
+
+  async function handleSubmit(e) {
     e.preventDefault();
     const form = e.target;
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    setStatus("sending");
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+      });
+      if (res.ok) {
+        setStatus("success");
+        formRef.current?.reset();
+        clearTimeout(timerRef.current);
+        timerRef.current = setTimeout(() => setStatus("idle"), 9000);
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
     }
-    setNoteShown(true);
-    form.reset();
-    clearTimeout(timerRef.current);
-    timerRef.current = setTimeout(() => setNoteShown(false), 9000);
   }
 
   return (
-    <Reveal as="form" className="prayer" onSubmit={handleSubmit} noValidate>
+    <Reveal as="form" className="prayer" onSubmit={handleSubmit} noValidate ref={formRef}>
       <h3>Send a Prayer Request</h3>
       <p className="sub">Share your need — our team will stand with you in prayer.</p>
       <div className="field">
@@ -42,15 +60,25 @@ function PrayerForm() {
         <label htmlFor="pf-msg">Your request</label>
         <textarea id="pf-msg" name="message" placeholder="Tell us how we can pray with you…" required />
       </div>
-      <button type="submit" className="btn btn-fire">
-        Send Request
-        <svg className="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-          <path d="m22 2-7 20-4-9-9-4z" />
-        </svg>
+      <button type="submit" className="btn btn-fire" disabled={status === "sending"}>
+        {status === "sending" ? "Sending…" : "Send Request"}
+        {status !== "sending" && (
+          <svg className="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+            <path d="m22 2-7 20-4-9-9-4z" />
+          </svg>
+        )}
       </button>
-      <div className={`form-note ${noteShown ? "show" : ""}`}>
-        Thank you — your request has been received. We are believing God with you.
-      </div>
+      {status === "success" && (
+        <div className="form-note show">
+          Thank you — your request has been received. We are believing God with you.
+        </div>
+      )}
+      {status === "error" && (
+        <div className="form-note show" style={{ borderColor: "var(--ember)", color: "var(--ember)" }}>
+          Something went wrong. Please email us directly at{" "}
+          <a href="mailto:info@healingnationglobal.org" style={{ color: "var(--ember)" }}>info@healingnationglobal.org</a>.
+        </div>
+      )}
     </Reveal>
   );
 }

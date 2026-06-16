@@ -7,6 +7,7 @@ function NavBar({ menuOpen, setMenuOpen }) {
     ["#ministries", "Ministries"],
     ["#medical", "Medical"],
     ["#media", "Media"],
+    ["#gallery", "Gallery"],
     ["#events", "Events"],
     ["#contact", "Contact"],
   ];

@@ -1,21 +1,46 @@
 import Reveal from "./Reveal";
-import FireDivider from "./FireDivider";
+
+const EVENTS = [
+  {
+    m: "JUN",
+    d: "28",
+    title: "Campus Revival Night",
+    loc: "University Campus · South-South, Nigeria",
+    type: "Campus Invasion",
+    detail: "An evening of worship, the Word, and encounters with God for students and young adults.",
+  },
+  {
+    m: "JUL",
+    d: "12",
+    title: "City Crusade & Healing Outreach",
+    loc: "City Square · Reaching the Region",
+    type: "Crusade",
+    detail: "Open-air gospel crusade with healing prayer, testimonies, and salvation calls.",
+  },
+  {
+    m: "JUL",
+    d: "20",
+    title: "Medical Mission Week",
+    loc: "Underserved Community · To be announced",
+    type: "Medical Outreach",
+    detail: "Free medical consultations, screenings, and medicines distributed to those in need.",
+  },
+];
+
 function Events() {
-  const list = [
-    { m: "Soon", d: "01", title: "Campus Revival Night", loc: "University Campus · South-South", type: "Campus Invasion" },
-    { m: "Soon", d: "02", title: "City Crusade & Healing Outreach", loc: "City Square · Reaching the Region", type: "Crusade" },
-    { m: "Soon", d: "03", title: "Medical Mission Week", loc: "Host Community · To be announced", type: "Medical Outreach" },
-  ];
   return (
     <section id="events">
       <div className="wrap">
         <Reveal as="span" className="eyebrow">Upcoming Events</Reveal>
         <Reveal as="h2" className="head">Where the fire<br /><span className="lit">is falling next.</span></Reveal>
         <div className="events">
-          {list.map((e) => (
+          {EVENTS.map((e) => (
             <Reveal as="div" className="event" key={e.title}>
-              <div className="date-chip"><div className="m">{e.m}</div><div className="d">{e.d}</div></div>
-              <div>
+              <div className="date-chip">
+                <div className="m">{e.m}</div>
+                <div className="d">{e.d}</div>
+              </div>
+              <div style={{ flex: 1 }}>
                 <h4>{e.title}</h4>
                 <div className="loc">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -24,13 +49,14 @@ function Events() {
                   </svg>
                   {e.loc}
                 </div>
+                <p style={{ fontSize: ".85rem", color: "var(--ash-dim)", marginTop: ".4rem", lineHeight: 1.5 }}>{e.detail}</p>
               </div>
               <div className="ev-type">{e.type}</div>
             </Reveal>
           ))}
         </div>
         <Reveal as="p" style={{ marginTop: "1.8rem", fontSize: ".9rem", color: "var(--ash-dim)" }}>
-          Dates and venues are announced ahead of each program.{" "}
+          Dates and venues are confirmed ahead of each program.{" "}
           <a href="#contact" style={{ color: "var(--gold-soft)" }}>Contact us</a> to host an outreach in
           your city or campus.
         </Reveal>
