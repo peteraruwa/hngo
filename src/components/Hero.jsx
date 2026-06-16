@@ -1,5 +1,5 @@
 import EmberCanvas from "./EmberCanvas";
-import Ico from "../icons";
+import Ico from "../icons.jsx";
 import Reveal from "./Reveal";
 function Hero() {
   return (

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { LOGO_SRC } from "../assets";
-import Ico from "../icons";
+import Ico from "../icons.jsx";
 function Footer() {
   const [year, setYear] = useState(new Date().getFullYear());
   useEffect(() => setYear(new Date().getFullYear()), []);

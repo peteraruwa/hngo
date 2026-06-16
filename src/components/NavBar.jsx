@@ -1,5 +1,5 @@
 import { LOGO_SRC } from "../assets";
-import Ico from "../icons";
+import Ico from "../icons.jsx";
 function NavBar({ menuOpen, setMenuOpen }) {
   const links = [
     ["#about", "About"],

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Ico from "../icons";
+import Ico from "../icons.jsx";
 import Reveal from "./Reveal";
 
 const SERMONS = [
