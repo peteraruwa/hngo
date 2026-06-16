@@ -86,5 +86,6 @@ function EmberCanvas() {
   }, []);
 
   return <canvas ref={canvasRef} className="hn-ember-canvas" />;
+}
 
 export default EmberCanvas;
