@@ -328,5 +328,3 @@ export const CSS = `
   .amount-chip.active,.amount-chip:hover{background:var(--ember);border-color:var(--ember);color:#fff}
 `;
 
-/* ============================================================
-   Small reusable bits
