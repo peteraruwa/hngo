@@ -17,7 +17,13 @@ function Footer() {
                 <span style={{ display: "block", fontWeight: 500, fontSize: ".62rem", letterSpacing: ".32em", textTransform: "uppercase", color: "var(--ember)", marginTop: 3 }}>Global Outreach</span>
               </span>
             </a>
+            <p style={{ color: "var(--gold-soft)", fontWeight: 700, letterSpacing: ".1em", textTransform: "uppercase", fontSize: ".82rem", marginBottom: ".6rem" }}>Winning All for Christ</p>
             <p>A Christ-centered ministry carrying the fire of God to the nations through evangelism, healing, discipleship, and medical outreach.</p>
+            <p style={{ marginTop: ".6rem", fontSize: ".85rem", color: "var(--ash)" }}>
+              <a href="tel:+2348121848107" style={{ color: "var(--ash)", textDecoration: "none" }}>+234 812 184 8107</a>
+              {" · "}
+              <a href="tel:07035216257" style={{ color: "var(--ash)", textDecoration: "none" }}>07035216257</a>
+            </p>
             <p className="foot-scripture">&ldquo;Go ye into all the world, and preach the gospel to every creature.&rdquo; &mdash; Mark 16:15</p>
           </div>
           <div className="foot-col">

@@ -101,6 +101,7 @@
   .tag-loc{display:inline-flex;align-items:center;gap:.6em;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);border-radius:999px;padding:.5em 1.05em;margin-bottom:1.7rem;background:rgba(245,181,63,.05)}
   .tag-loc i{width:6px;height:6px;border-radius:50%;background:var(--ember);box-shadow:0 0 10px var(--ember);display:inline-block;animation:pulse 2.4s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .hero-motto{font-family:"Cinzel",serif;font-weight:700;font-size:clamp(.7rem,1.6vw,1rem);letter-spacing:.28em;text-transform:uppercase;color:var(--ember);margin:.5rem 0 0;opacity:.92}
   h1.hero-title{font-family:'Cinzel',serif;font-weight:700;font-size:clamp(2.5rem,7.2vw,5.6rem);line-height:1.04;letter-spacing:.005em;color:var(--cream);text-shadow:0 2px 40px rgba(255,106,24,.18)}
   h1.hero-title .fire{display:inline-block;background:linear-gradient(180deg,var(--gold-soft) 0%,var(--gold) 38%,var(--ember) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 50px rgba(255,106,24,.4)}
   .hero-sub{margin-top:1.6rem;font-size:1.14rem;max-width:54ch;color:var(--ash)}

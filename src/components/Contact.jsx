@@ -10,7 +10,7 @@ const SOCIAL = {
 };
 
 /* Replace with the actual WhatsApp number (international format, no +) */
-const WHATSAPP_NUMBER = "2348000000000";
+const WHATSAPP_NUMBER = "2348121848107";
 const WHATSAPP_MSG = encodeURIComponent("Hello, I'd like to get in touch with Healing Nation Global Outreach.");
 
 function Contact() {
@@ -54,13 +54,15 @@ function Contact() {
                 <div>
                   <div className="k">Phone / WhatsApp</div>
                   <div className="v">
+                    <a href="tel:+2348121848107" style={{ color: "var(--cream)", display: "block" }}>+234 812 184 8107</a>
+                    <a href="tel:07035216257" style={{ color: "var(--cream)", display: "block", marginTop: ".2rem" }}>07035216257</a>
                     <a
                       href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ color: "var(--gold-soft)" }}
+                      style={{ color: "var(--gold-soft)", display: "inline-block", marginTop: ".4rem", fontSize: ".88rem" }}
                     >
-                      Message us on WhatsApp →
+                      Chat on WhatsApp →
                     </a>
                   </div>
                 </div>
@@ -71,7 +73,7 @@ function Contact() {
                     <path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" />
                   </svg>
                 </div>
-                <div><div className="k">Reach</div><div className="v">Headquartered locally &middot; sent to every nation</div></div>
+                <div><div className="k">Motto</div><div className="v" style={{ color: "var(--gold-soft)", fontWeight: 600, letterSpacing: ".04em" }}>Winning All for Christ</div></div>
               </Reveal>
             </div>
             <Reveal className="socials">

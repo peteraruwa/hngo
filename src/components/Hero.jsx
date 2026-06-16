@@ -17,6 +17,7 @@ function Hero() {
       </svg>
       <div className="wrap hero-in">
         <Reveal as="span" className="tag-loc"><i />Global Outreach &middot; To Every Nation</Reveal>
+        <Reveal as="p" className="hero-motto">WINNING ALL FOR CHRIST</Reveal>
         <Reveal as="h1" className="hero-title">
           Taking the <span className="fire">Fire of God</span><br />to the Nations
         </Reveal>
